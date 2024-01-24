@@ -1,0 +1,25 @@
+﻿@model MedicamentoModel
+@{
+}
+<h2>Actualizar Medicamento</h2>
+
+<form asp-action="UpdateMedicamento" asp-controller="Medicamento" method="post">
+    <input asp-for="IdMedicamento" type="hidden" value="@Model.IdMedicamento"/>
+    <div class="form-control">
+        <label for="Nombre">Nombre</label>
+        <input type="text" asp-for="Nombre" id="Nombre" placeholder="Escriba el Nombre Aqui" value="@Model.Nombre" />
+    </div>
+    <div class="form-control">
+        <label for="Stock">Stock</label>
+        <input type="text" asp-for="Stock" id="Stock" placeholder="Escriba el Stock Disponible" value="@Model.Stock" />
+    </div>
+    <div class="form-control">
+        <label for="FechaCaducidad">FechaCaducidad</label>
+        <input type="date" asp-for="FechaCaducidad" id="FechaCaducidad" value="@Model.FechaCaducidad.ToString("yyyy-MM-dd")" />
+    </div>
+    <div class="form-control">
+        <label for="FechaIngreso">FechaIngreso</label>
+        <input type="date" asp-for="FechaIngreso" id="FechaIngreso" value="@Model.FechaIngreso.ToString("yyyy-MM-dd")" />
+    </div>
+    <button class="btn-dark" type="submit">Actualizar</button>
+</form>

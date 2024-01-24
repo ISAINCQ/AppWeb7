@@ -1,0 +1,25 @@
+﻿@model MedicamentoModel
+@{
+}
+<h2>Agregar Medicamento</h2>
+
+<form asp-action="AddMedicamento" asp-controller="Medicamento" method="post">
+    <input asp-for="IdMedicamento" type="hidden"/>
+    <div class="form-control">
+        <label for="Nombre">Nombre</label>
+        <input type="text" asp-for="Nombre" id="Nombre" placeholder="Escriba el Nombre Aqui"/>
+    </div>
+    <div class="form-control">
+        <label for="Stock">Stock</label>
+        <input type="text" asp-for="Stock" id="Stock" placeholder="Escriba el Stock Disponible"/>
+    </div>
+    <div class="form-control">
+        <label for="FechaCaducidad">FechaCaducidad</label>
+        <input type="date" asp-for="FechaCaducidad" id="FechaCaducidad"/>
+    </div>
+    <div class="form-control">
+        <label for="FechaIngreso">FechaIngreso</label>
+        <input type="date" asp-for="FechaIngreso" id="FechaIngreso"/>
+    </div>
+    <button class="btn-dark" type="submit">Agregars</button>
+</form>

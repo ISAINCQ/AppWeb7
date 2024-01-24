@@ -1,0 +1,36 @@
+﻿@model List<MedicamentoModel>
+@{
+}
+<h2>Lista Medicamentos</h2>
+<a class="btn-light" asp-action="AddMedicamento" asp-controller="Medicamento">Agregar</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Eliminar</th>
+            <th>Editar</th>
+            <th>Id Medicamento</th>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Fecha Caducidad</th>
+            <th>Fecha Ingreso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(MedicamentoModel item in Model)
+            {
+            <tr>
+               <td><a class="btn-danger" asp-action="DeleteMedicamento" asp-controller="Medicamento" asp-route-IdMedicamento="@item.IdMedicamento">Eliminar</a></td>
+               <td><a class="btn-dark" asp-action="UpdateMedicamento" asp-controller="Medicamento" asp-route-IdMedicamento="@item.IdMedicamento">Editar</a></td>
+               <td>@item.IdMedicamento</td>
+               <td>@item.Nombre</td>
+               <td>@item.Stock</td>
+               <td>@item.FechaCaducidad</td>
+               <td>@item.FechaIngreso</td>
+            </tr>
+                
+            }
+        }
+    </tbody>
+
+</table>
